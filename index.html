@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AC Wood and LeatherCraft</title>
 
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <!-- link to stylesheets -->
-  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css?v=20260130">
 
 
 </head>
@@ -14,13 +19,15 @@
     <div class="header">
       <h1 id="mainTitle">AC Wood and Leathercraft</h1>
 
-      <button type="button" name="menu" class="menu-button" id="menuButton">MENU
+      <button type="button" name="menu" class="menu-button" id="menuButton" aria-expanded="false" aria-controls="nav" aria-label="Toggle navigation">
         <span class="button-line"></span>
         <span class="button-line"></span>
-        <span class="button-line"></span> </button>
+        <span class="button-line"></span>
+        <span class="sr-only">Toggle navigation</span>
+      </button>
     </div>
     <!-- Navigation Menu -->
-    <ul id="nav">
+    <ul id="nav" role="navigation" aria-label="Main menu" class="hidden">
       <li class="nav-link"><a href="woodcraft.html">WoodCraft</a></li>
       <li class="nav-link"><a href="leathercraft.html">LeatherCraft</a></li>
       <li class="nav-link"><a href="knifemaking.html">Knifemaking</a></li>
@@ -28,36 +35,47 @@
     </ul>
 
 <!-- Introduction to site and myself -->
-    <div class="about">
-      <h2 class="heading">About Me</h2>
-      <p>As a kid, I was always intrigued with creating and building. I had to understand how everything worked. This has become a life-long passion to build what I could buy, despite the added cost. I have worked hard to turn my passion into a craft others can appreciate as much as I do. This site is about my journey as a craftsman, and a chance to showcase the projects I have created.</p>
+    <div class="row">
+      <div class="about">
+        <h2 class="heading">Welcome to AC Wood and LeatherCraft</h2>
+        <p>This site showcases various projects I have built over the years, ranging from woodworking to leathercraft to home remodeling. Feel free to explore each section to see detailed information and images of my work.</p>
+      </div>
     </div>
   </header>
 
+  <!-- Hero Banner -->
+  <section class="hero container" aria-hidden="false">
+    <div class="hero-content">
+      <h2 class="hero-title">Craftsmanship, one project at a time</h2>
+      <p class="hero-sub">Wood, leather, and home renovation — built with care and attention to detail.</p>
+      <p><a class="car-btn" href="woodcraft.html">See WoodCraft projects</a></p>
+    </div>
+  </section>
+
 <!-- Main page content -->
   <div class="row">
-    <div class="WoodCraft col">
+    <div class="WoodCraft col card">
       <h2 class="heading">WoodCraft</h2>
       <p>From my dad's basement workshop, to more tools than my house can fit</p>
-      <a href="./woodcraft.html"><img src="img/tea1.PNG" alt="Tea Dispenser Blueprint" class="main-img link-img"></a>
+      <a href="./woodcraft.html"><img src="img/tea1-w768.jpg" srcset="img/tea1-w480.jpg 480w, img/tea1-w768.jpg 768w" sizes="(max-width: 768px) 90vw, 35vw" alt="Tea Dispenser Blueprint" class="main-img link-img" loading="lazy"></a>
     </div>
 
-    <div class="house col">
+    <div class="house col card">
       <h2 class="heading">Remodeling my house</h2>
       <p>We bought a fixer-upper, which pushed me to learn all sorts of new skills</p>
-      <a href="./remodel.html"><img src="img/houseThumb.jpg" alt="House" class="main-img link-img"></a> 
+      <a href="./remodel.html"><img src="img/houseThumb-w768.jpg" srcset="img/houseThumb-w480.jpg 480w, img/houseThumb-w768.jpg 768w" sizes="(max-width: 768px) 90vw, 35vw" alt="House" class="main-img link-img" loading="lazy"></a> 
     </div>
 
-    <div class="LeatherCraft col">
+    <div class="LeatherCraft col card">
       <h2 class="heading">LeatherCraft</h2>
       <p>My grandfather taught me leather stamping at a young age</p>
-      <a href="./leathercraft.html"><img src="img/beltThumb.jpg" alt="Black belt final" class="main-img link-img"></a>
+      <a href="./leathercraft.html"><img src="img/beltThumb-w768.jpg" srcset="img/beltThumb-w480.jpg 480w, img/beltThumb-w768.jpg 768w" sizes="(max-width: 768px) 90vw, 35vw" alt="Black belt final" class="main-img link-img" loading="lazy"></a>
     </div>
 
-    <div class="knifemaking col">
+    <div class="knifemaking col card">
       <h2 class="heading">Knifemaking</h2>
       <p>I tried this on a whim, and enjoyed creating something new</p>
-      <a href="./knifemaking.html"><img src="img/knife2.JPG" alt="knife" class="main-img link-img"></a>
+      <a href="./knifemaking.html"><img src="img/knife2-w768.jpg" srcset="img/knife2-w480.jpg 480w, img/knife2-w768.jpg 768w" sizes="(max-width: 768px) 90vw, 35vw" alt="knife" class="main-img link-img" loading="lazy"></a>
     </div>
   </div>
 

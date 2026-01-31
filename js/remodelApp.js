@@ -1,28 +1,13 @@
-// Image Carousel
-
-// Query Selectors
-var imgDisplay = document.querySelector('.img-display');
-var prev = document.querySelector('prev');
-var next = document.querySelector('next');
-var index = 0;
-
-//Image Array
-var imgArray = ['./img/remodel1.JPG','./img/remodel2.JPG','./img/remodel3.JPG','./img/remodel4.JPG','./img/remodel5.JPG','./img/remodel6.JPG','./img/remodel7.JPG','./img/remodel8.JPG','./img/remodel9.JPG','./img/remodel10.JPG','./img/remodel11.JPG','./img/remodel12.JPG'];
-
-$('.prev').click(function() {
-    if (index > 0) {
-        console.log("jQuery load successfull")
-        imgDisplay.src = imgArray[index - 1];
-        index -= 1;
-        console.log(index);
-    };
-});
-
-$('.next').click(function() {
-    if (index < (imgArray.length - 1)) {
-        console.log("jQuery load successfull")
-        imgDisplay.src = imgArray[index + 1];
-        index += 1;
-        console.log(index);
-    };
-});
+// Remodel page slider initializer (vanilla)
+(function(){
+  var images = ['./img/remodel1-w768.jpg','./img/remodel2-w768.jpg','./img/remodel3-w768.jpg','./img/remodel4-w768.jpg','./img/remodel5-w768.jpg','./img/remodel6-w768.jpg','./img/remodel7-w768.jpg','./img/remodel8-w768.jpg','./img/remodel9-w768.jpg','./img/remodel10-w768.jpg','./img/remodel11-w768.jpg','./img/remodel12-w768.jpg'];
+  function init(){
+    console.log('[remodelApp] init');
+    if (window.Slider) {
+      new Slider({ containerSelector: '.img-carousel', images: images, descSelector: '.img-description' });
+    } else {
+      console.warn('Slider not found - ensure js/slider.js is loaded before remodelApp.js');
+    }
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
+})();

@@ -1,25 +1,65 @@
 
-// Create Menu button variable
-var menuButton = document.getElementById('menuButton')
-var menuOpen = false;
-var nav = document.getElementById('nav')
-var sWidth = window.screen.width;
-console.log("Initial Width: " + sWidth);
+// Accessible responsive menu toggling
+var menuButton = document.getElementById('menuButton');
+var nav = document.getElementById('nav');
 
-// Create button event to toggle navigation menu view
-menuButton.addEventListener("click", function() {
-  // Test button functionality
-  console.log("Button test confirmed ")
-  // Toggle menu display
-  if (menuOpen === false) {
-    // add code to make #nav display viewable
-    nav.style.display = 'block';
-    menuOpen = true;
+// Initialize
+menuButton.setAttribute('aria-expanded', 'false');
+nav.classList.add('hidden');
+
+menuButton.addEventListener('click', function() {
+  var isOpen = nav.classList.toggle('hidden');
+  // when class 'hidden' present -> visually hidden, so invert for aria
+  menuButton.setAttribute('aria-expanded', String(!isOpen));
+  menuButton.classList.toggle('is-open', !isOpen);
+});
+
+// Close nav on escape
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape'){
+    if (!nav.classList.contains('hidden')){
+      nav.classList.add('hidden');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.classList.remove('is-open');
+    }
+  }
+});
+
+// Ensure nav state is correct on resize
+function checkResize(){
+  if (window.innerWidth >= 768){
+    // show the nav (desktop) and remove mobile-hidden styles
+    nav.classList.remove('hidden');
+    menuButton.setAttribute('aria-expanded', 'false');
+    menuButton.classList.remove('is-open');
   } else {
-    // add code to make #nav display dissappear
-    // resizing after toggling menu results in no menu showing ////////////
-    nav.style.display = 'none';
-    menuOpen = false;
-  };
-})
+    // mobile default: hide nav
+    nav.classList.add('hidden');
+    menuButton.setAttribute('aria-expanded', 'false');
+    menuButton.classList.remove('is-open');
+  }
+}
+
+window.addEventListener('resize', checkResize);
+// run once
+checkResize();
+
+// Dev-only: cache-bust styles when running locally or from file:// so changes show immediately
+(function devCacheBust(){
+  try {
+    var isDev = (location.protocol === 'file:') || (location.hostname === 'localhost') || (location.hostname === '127.0.0.1');
+    if (!isDev) return;
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    links.forEach(function(link){
+      if (!link.href) return;
+      // target the main stylesheet (remove existing querystring)
+      if (link.getAttribute('href').indexOf('css/style.css') !== -1 || link.href.indexOf('css/style.css') !== -1){
+        var hrefBase = link.getAttribute('href').split('?')[0];
+        link.setAttribute('href', hrefBase + '?_=' + Date.now());
+        console.log('[devCacheBust] updated', hrefBase);
+      }
+    });
+  } catch (e){ console.error('devCacheBust error', e); }
+})();
+
 

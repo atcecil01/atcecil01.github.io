@@ -3,60 +3,56 @@
   <title>AC Wood and LeatherCraft</title>
 
 <!-- link to stylesheets -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=20260130">
   <link rel="stylesheet" href="css/normalize.css">
-
-
 </head>
+<header id="top">
+  <div class="header">
+    <h1 id="mainTitle">AC Wood and Leathercraft</h1>
 
-<body>
-  <header id="top">
-    <div class="header">
-      <h1 id="mainTitle">AC Wood and Leathercraft</h1>
-
-      <button type="button" name="menu" class="menu-button" id="menuButton">MENU
-        <span class="button-line"></span>
-        <span class="button-line"></span>
-        <span class="button-line"></span> </button>
-    </div>
-    <!-- Navigation Menu -->
-    <ul id="nav">
-        <li class="nav-link"> <a href="index.html">Home</a></li>
-        <li class="nav-link"><a href="leathercraft.html">LeatherCraft</a></li>
-        <li class="nav-link"><a href="knifemaking.html">Knifemaking</a></li>
-        <li class="nav-link"> <a href="remodel.html">House Remodel</a> </li>
-    </ul>
+    <button type="button" name="menu" class="menu-button" id="menuButton" aria-expanded="false" aria-controls="nav" aria-label="Toggle navigation">
+      <span class="button-line"></span>
+      <span class="button-line"></span>
+      <span class="button-line"></span>
+      <span class="sr-only">Toggle navigation</span>
+    </button>
+  </div>
+  <!-- Navigation Menu -->
+  <ul id="nav" role="navigation" aria-label="Main menu" class="hidden">
+      <li class="nav-link"> <a href="index.html">Home</a></li>
+      <li class="nav-link"><a href="leathercraft.html">LeatherCraft</a></li>
+      <li class="nav-link"><a href="knifemaking.html">Knifemaking</a></li>
+      <li class="nav-link"> <a href="remodel.html">House Remodel</a> </li>
+  </ul>
 
 <!-- Introduction to site and myself -->
-    <div class="about">
-      <h2 class="heading">About The Project</h2>
-      <p>I started out in my dad's woodshop, but quickly progressed to building complex projects with intricate details. This teabox was an anniversary gift for my wife, and features 4 separate compartments to hold tea bags.</p>
-    </div>
-  </header>
+  <div class="about">
+    <h2 class="heading">About The Project</h2>
+    <p>I started out in my dad's woodshop, but quickly progressed to building complex projects with intricate details. This teabox was an anniversary gift for my wife, and features 4 separate compartments to hold tea bags.</p>
+  </div>
+</header>
 
+<body>
 <!-- Main page content -->
 
   <div class='img-carousel'>
-    <div>  
-      <button type="button" class="prev car-btn">Previous Image</button>
-      <button type="button" class="next car-btn">Next Image</button>
-   </div> 
-    <img src="img/tea1.PNG" alt="Teabox Sketch" class='img-display main-img'>
+    <button type="button" class="prev car-btn" aria-label="Previous image" title="Previous image">Previous Image</button>
+    <img src="img/tea1-w768.jpg" srcset="img/tea1-w480.jpg 480w, img/tea1-w768.jpg 768w" sizes="(max-width:768px) 94vw, 55vw" alt="Teabox Sketch" class='img-display main-img' loading="lazy">
+    <button type="button" class="next car-btn" aria-label="Next image" title="Next image">Next Image</button>
   </div>
 
-  <div class='img-description'></div>
-
-  <footer>
-    <p>This project site is intended to show projects I have built. If you have any questions about any projects seen here, or would like blueprints for them feel free to contact me. Make sure to use proper safety equipment when working.</p>
-    <ul>
-      <li><a href="https://github.com/atcecil01" class="social-links" target="_blank">Github link</a> <a href="https://www.linkedin.com/in/andrew-cecil-286b6b47" class="social-links" target="_blank">LinkedIn link</a></li>
-      <li><a href="#top">Back to Top</a></li>
-    </ul>
-  </footer>
-
-  <!-- Link to Javascript file-->
-  <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="js/app.js"></script>
-  <script type="text/javascript" src="js/woodApp.js"></script>
-
+  <div class='img-description' role="status" aria-live="polite"></div>
 </body>
+
+<footer>
+  <p>This project site is intended to show projects I have built. If you have any questions about any projects seen here, or would like blueprints for them feel free to contact me. Make sure to use proper safety equipment when working.</p>
+  <ul>
+    <li><a href="https://github.com/atcecil01" class="social-links" target="_blank">Github link</a> <a href="https://www.linkedin.com/in/andrew-cecil-286b6b47" class="social-links" target="_blank">LinkedIn link</a></li>
+    <li><a href="#top">Back to Top</a></li>
+  </ul>
+</footer>
+
+<!-- Link to Javascript file-->
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/slider.js"></script>
+<script type="text/javascript" src="js/woodApp.js"></script>

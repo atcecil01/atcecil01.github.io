@@ -1,55 +1,59 @@
 <!DOCTYPE html>
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AC Wood and LeatherCraft</title>
 
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <!-- link to stylesheets -->
-  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css?v=20260130">
 
 
 </head>
 
-<body>
-  <header id="top">
-    <div class="header">
-      <h1 id="mainTitle">AC Wood and Leathercraft</h1>
+<header id="top">
+  <div class="header">
+    <h1 id="mainTitle">AC Wood and Leathercraft</h1>
 
-      <button type="button" name="menu" class="menu-button" id="menuButton">MENU
-        <span class="button-line"></span>
-        <span class="button-line"></span>
-        <span class="button-line"></span> </button>
-    </div>
-    <!-- Navigation Menu -->
-    <ul id="nav">
-      <li class="nav-link"> <a href="index.html">Home</a></li>
-      <li class="nav-link"><a href="woodcraft.html">WoodCraft</a></li>
-      <li class="nav-link"><a href="leathercraft.html">LeatherCraft</a></li>
-      <li class="nav-link"> <a href="remodel.html">House Remodel</a> </li>
-    </ul>
+    <button type="button" name="menu" class="menu-button" id="menuButton" aria-expanded="false" aria-controls="nav" aria-label="Toggle navigation">
+      <span class="button-line"></span>
+      <span class="button-line"></span>
+      <span class="button-line"></span>
+      <span class="sr-only">Toggle navigation</span>
+    </button>
+  </div>
+  <!-- Navigation Menu -->
+  <ul id="nav" role="navigation" aria-label="Main menu" class="hidden">
+    <li class="nav-link"> <a href="index.html">Home</a></li>
+    <li class="nav-link"><a href="woodcraft.html">WoodCraft</a></li>
+    <li class="nav-link"><a href="leathercraft.html">LeatherCraft</a></li>
+    <li class="nav-link"> <a href="remodel.html">House Remodel</a> </li>
+  </ul>
 
 <!-- Introduction to site and myself -->
-    <div class="about">
-      <h2 class="heading">About The Project</h2>
-      <p>I tried making a knife on a whim. It was fun, even though the result was not very high quality. I also revitalized an old knife for a friend with a new handle made from rock maple.</p>
-    </div>
-  </header>
+  <div class="about">
+    <h2 class="heading">About The Project</h2>
+    <p>I tried making a knife on a whim. It was fun, even though the result was not very high quality. I also revitalized an old knife for a friend with a new handle made from rock maple.</p>
+  </div>
+</header>
 
+<body>
 <!-- Main page content -->
+  <img src="img/knife1-w768.jpg" srcset="img/knife1-w480.jpg 480w, img/knife1-w768.jpg 768w" sizes="(max-width:768px) 94vw, 60vw" alt="Knife" class="main-img" loading="lazy">
 
-<img src="img/knife1.JPG" alt="Knife" class="main-img">
-
-<img src="img/knife2.JPG" alt="Knife2" class="main-img">
-
-
-  <footer>
-    <p>This project site is intended to show projects I have built. If you have any questions about any projects seen here, or would like blueprints for them feel free to contact me. Make sure to use proper safety equipment when working.</p>
-    <ul>
-      <li><a href="https://github.com/atcecil01" class="social-links" target="_blank">Github link</a> <a href="https://www.linkedin.com/in/andrew-cecil-286b6b47" class="social-links" target="_blank">LinkedIn link</a></li>
-      <li><a href="#top">Back to Top</a></li>
-    </ul>
-  </footer>
-
-  <!-- Link to Javascript file-->
-  <script type="text/javascript" src="js/app.js"></script>
-
+  <img src="img/knife2-w768.jpg" srcset="img/knife2-w480.jpg 480w, img/knife2-w768.jpg 768w" sizes="(max-width:768px) 94vw, 60vw" alt="Knife2" class="main-img" loading="lazy">
 </body>
+
+<footer>
+  <p>This project site is intended to show projects I have built. If you have any questions about any projects seen here, or would like blueprints for them feel free to contact me. Make sure to use proper safety equipment when working.</p>
+  <ul>
+    <li><a href="https://github.com/atcecil01" class="social-links" target="_blank">Github link</a> <a href="https://www.linkedin.com/in/andrew-cecil-286b6b47" class="social-links" target="_blank">LinkedIn link</a></li>
+    <li><a href="#top">Back to Top</a></li>
+  </ul>
+</footer>
+
+<!-- Link to Javascript file-->
+<script type="text/javascript" src="js/app.js"></script>

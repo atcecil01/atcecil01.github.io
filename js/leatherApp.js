@@ -1,28 +1,13 @@
-// Image Carousel
-
-// Query Selectors
-var imgDisplay = document.querySelector('.img-display');
-var prev = document.querySelector('prev');
-var next = document.querySelector('next');
-var index = 0;
-
-//Image Array
-var imgArray = ['./img/belt1.JPG','./img/belt3.JPG','./img/belt5.JPG','./img/belt4.JPG','./img/belt6.JPG','./img/belt7.JPG','./img/belt8.JPG','./img/belt9.JPG'];
-
-$('.prev').click(function() {
-    if (index > 0) {
-        console.log("jQuery load successfull")
-        imgDisplay.src = imgArray[index - 1];
-        index -= 1;
-        console.log(index);
-    };
-});
-
-$('.next').click(function() {
-    if (index < (imgArray.length - 1)) {
-        console.log("jQuery load successfull")
-        imgDisplay.src = imgArray[index + 1];
-        index += 1;
-        console.log(index);
-    };
-});
+// Leather page slider initializer (vanilla)
+(function(){
+  var images = ['./img/belt1-w768.jpg','./img/belt3-w768.jpg','./img/belt5-w768.jpg','./img/belt4-w768.jpg','./img/belt6-w768.jpg','./img/belt7-w768.jpg','./img/belt8-w768.jpg','./img/belt9-w768.jpg'];
+  function init(){
+    console.log('[leatherApp] init');
+    if (window.Slider) {
+      new Slider({ containerSelector: '.img-carousel', images: images, descSelector: '.img-description' });
+    } else {
+      console.warn('Slider not found - ensure js/slider.js is loaded before leatherApp.js');
+    }
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
+})();

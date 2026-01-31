@@ -1,0 +1,11 @@
+{
+  "name": "atcecil01-site",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "images": "node scripts/resize-images.js"
+  },
+  "devDependencies": {
+    "sharp": "^0.32.0"
+  }
+}
