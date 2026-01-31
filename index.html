@@ -1,48 +1,19 @@
 <!DOCTYPE html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AC Wood and LeatherCraft</title>
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<!-- link to stylesheets -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/style.css?v=20260130">
-
-
+  <script src="js/include-layout.js" defer></script>
 </head>
 
+<div data-include="header">
+  <div class="row">
+    <div class="about">
+      <h2 class="heading">Welcome to AC Wood and LeatherCraft</h2>
+      <p>This site showcases various projects I have built over the years, ranging from woodworking to leathercraft to home remodeling. Feel free to explore each section to see detailed information and images of my work.</p>
+    </div>
+  </div>
+</div>
+
 <body>
-  <header id="top">
-    <div class="header">
-      <h1 id="mainTitle">AC Wood and Leathercraft</h1>
-
-      <button type="button" name="menu" class="menu-button" id="menuButton" aria-expanded="false" aria-controls="nav" aria-label="Toggle navigation">
-        <span class="button-line"></span>
-        <span class="button-line"></span>
-        <span class="button-line"></span>
-        <span class="sr-only">Toggle navigation</span>
-      </button>
-    </div>
-    <!-- Navigation Menu -->
-    <ul id="nav" role="navigation" aria-label="Main menu" class="hidden">
-      <li class="nav-link"><a href="woodcraft.html">WoodCraft</a></li>
-      <li class="nav-link"><a href="leathercraft.html">LeatherCraft</a></li>
-      <li class="nav-link"><a href="knifemaking.html">Knifemaking</a></li>
-      <li class="nav-link"> <a href="remodel.html">House Remodel</a> </li>
-    </ul>
-
-<!-- Introduction to site and myself -->
-    <div class="row">
-      <div class="about">
-        <h2 class="heading">Welcome to AC Wood and LeatherCraft</h2>
-        <p>This site showcases various projects I have built over the years, ranging from woodworking to leathercraft to home remodeling. Feel free to explore each section to see detailed information and images of my work.</p>
-      </div>
-    </div>
-  </header>
-
   <!-- Hero Banner -->
   <section class="hero container" aria-hidden="false">
     <div class="hero-content">
@@ -78,18 +49,9 @@
       <a href="./knifemaking.html"><img src="img/knife2-w768.jpg" srcset="img/knife2-w480.jpg 480w, img/knife2-w768.jpg 768w" sizes="(max-width: 768px) 90vw, 35vw" alt="knife" class="main-img link-img" loading="lazy"></a>
     </div>
   </div>
-
-  <footer>
-    <!-- Disclaimer -->
-    <p>This project site is intended to show projects I have built. If you have any questions about any projects seen here, or would like blueprints for them feel free to contact me. Make sure to use proper safety equipment when working.</p>
-    <!-- Social links -->
-    <ul>
-      <li><a href="https://github.com/atcecil01" class="social-links" target="_blank">Github link</a> <a href="https://www.linkedin.com/in/andrew-cecil-286b6b47" class="social-links" target="_blank">LinkedIn link</a></li>
-      <li><a href="#top">Back to Top</a></li>
-    </ul>
-  </footer>
-
-  <!-- Link to Javascript file-->
-  <script type="text/javascript" src="js/app.js"></script>
-  
 </body>
+
+<div data-include="footer"></div>
+
+<!-- Link to Javascript file-->
+<script type="text/javascript" src="js/app.js"></script>

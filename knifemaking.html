@@ -1,17 +1,7 @@
 <!DOCTYPE html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AC Wood and LeatherCraft</title>
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<!-- link to stylesheets -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/style.css?v=20260130">
-
-
+  <script src="js/include-layout.js" defer></script>
 </head>
 
 <header id="top">
@@ -33,12 +23,12 @@
     <li class="nav-link"> <a href="remodel.html">House Remodel</a> </li>
   </ul>
 
-<!-- Introduction to site and myself -->
+<div data-include="header">
   <div class="about">
     <h2 class="heading">About The Project</h2>
     <p>I tried making a knife on a whim. It was fun, even though the result was not very high quality. I also revitalized an old knife for a friend with a new handle made from rock maple.</p>
   </div>
-</header>
+</div>
 
 <body>
 <!-- Main page content -->
@@ -47,13 +37,7 @@
   <img src="img/knife2-w768.jpg" srcset="img/knife2-w480.jpg 480w, img/knife2-w768.jpg 768w" sizes="(max-width:768px) 94vw, 60vw" alt="Knife2" class="main-img" loading="lazy">
 </body>
 
-<footer>
-  <p>This project site is intended to show projects I have built. If you have any questions about any projects seen here, or would like blueprints for them feel free to contact me. Make sure to use proper safety equipment when working.</p>
-  <ul>
-    <li><a href="https://github.com/atcecil01" class="social-links" target="_blank">Github link</a> <a href="https://www.linkedin.com/in/andrew-cecil-286b6b47" class="social-links" target="_blank">LinkedIn link</a></li>
-    <li><a href="#top">Back to Top</a></li>
-  </ul>
-</footer>
+<div data-include="footer"></div>
 
 <!-- Link to Javascript file-->
 <script type="text/javascript" src="js/app.js"></script>
