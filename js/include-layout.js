@@ -55,7 +55,7 @@
 <footer class="footer">
   <p>This project site is intended to show projects I have built. If you have any questions about any projects seen here, or would like blueprints for them feel free to contact me. Make sure to use proper safety equipment when working.</p>
   <ul>
-    <li><a href="https://github.com/atcecil01" class="social-links" target="_blank">Github link</a> <a href="https://www.linkedin.com/in/andrew-cecil-286b6b47" class="social-links" target="_blank">LinkedIn link</a></li>
+    <li><a href="https://github.com/atcecil01" class="social-links" target="_blank">Github</a> | <a href="https://www.linkedin.com/in/andrew-cecil/" class="social-links" target="_blank">LinkedIn</a></li>
     <li><a href="#top">Back to Top</a></li>
   </ul>
 </footer>`;
