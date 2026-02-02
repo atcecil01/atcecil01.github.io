@@ -40,12 +40,6 @@
 <header id="top">
   <div class="header">
     <h1 id="mainTitle">AC Wood and Leathercraft</h1>
-    <button type="button" name="menu" class="menu-button" id="menuButton" aria-expanded="false" aria-controls="nav" aria-label="Toggle navigation">
-      <span class="button-line"></span>
-      <span class="button-line"></span>
-      <span class="button-line"></span>
-      <span class="sr-only">Toggle navigation</span>
-    </button>
   </div>
   <ul id="nav" role="navigation" aria-label="Main menu" class="hidden">
     <li class="nav-link"><a href="index.html">Home</a></li>
