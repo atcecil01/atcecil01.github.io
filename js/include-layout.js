@@ -28,8 +28,61 @@
 
   async function include(name){
     let html;
-    try{ html = await fetchText(`partials/${name}.html`); }
-    catch(err){ console.warn(`include-layout: ${name} include failed`, err); return; }
+    try{
+      html = await fetchText(`partials/${name}.html`);
+    }catch(err){
+      console.warn(`include-layout: ${name} include failed`, err);
+      // If fetch fails (common when opening pages via file://), inject a minimal fallback
+      // so the page still renders useful header/footer content.
+      const tpl = document.createElement('template');
+      if(name === 'header'){
+        tpl.innerHTML = `
+<header id="top">
+  <div class="header">
+    <h1 id="mainTitle">AC Wood and Leathercraft</h1>
+    <button type="button" name="menu" class="menu-button" id="menuButton" aria-expanded="false" aria-controls="nav" aria-label="Toggle navigation">
+      <span class="button-line"></span>
+      <span class="button-line"></span>
+      <span class="button-line"></span>
+      <span class="sr-only">Toggle navigation</span>
+    </button>
+  </div>
+  <ul id="nav" role="navigation" aria-label="Main menu" class="hidden">
+    <li class="nav-link"><a href="index.html">Home</a></li>
+    <li class="nav-link"><a href="woodcraft.html">WoodCraft</a></li>
+    <li class="nav-link"><a href="leathercraft.html">LeatherCraft</a></li>
+    <li class="nav-link"><a href="knifemaking.html">Knifemaking</a></li>
+    <li class="nav-link"><a href="remodel.html">House Remodel</a></li>
+  </ul>
+  <div data-slot></div>
+</header>`;
+      }else if(name === 'footer'){
+        tpl.innerHTML = `
+<footer class="footer">
+  <p>This project site is intended to show projects I have built. If you have any questions about any projects seen here, or would like blueprints for them feel free to contact me. Make sure to use proper safety equipment when working.</p>
+  <ul>
+    <li><a href="https://github.com/atcecil01" class="social-links" target="_blank">Github link</a> <a href="https://www.linkedin.com/in/andrew-cecil-286b6b47" class="social-links" target="_blank">LinkedIn link</a></li>
+    <li><a href="#top">Back to Top</a></li>
+  </ul>
+</footer>`;
+      }else{
+        // unknown include, abort
+        return;
+      }
+
+      // perform replacement using the fallback template
+      document.querySelectorAll(`[data-include="${name}"]`).forEach(placeholder => {
+        const frag = tpl.content.cloneNode(true);
+        const slot = frag.querySelector('[data-slot]');
+        if(slot){
+          while(placeholder.firstChild){ slot.appendChild(placeholder.firstChild); }
+        }
+        const nodes = Array.from(frag.childNodes);
+        placeholder.replaceWith(...nodes);
+      });
+
+      return;
+    }
 
     const tpl = document.createElement('template');
     tpl.innerHTML = html;
